@@ -9,6 +9,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import '../../../../start/start_screen.dart';
 import '../../../home/presentation/home_screen.dart';
 
 class AuthRepoImpl extends AuthRepo {
@@ -67,7 +68,7 @@ class AuthRepoImpl extends AuthRepo {
       );
       UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
 
-      Get.to(HomeScreen());
+      Get.to(StartScreen());
       return Right(UserModel(email: userCredential.user!.email!,));
 
     } catch (e) {

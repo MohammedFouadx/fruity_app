@@ -5,6 +5,7 @@ import 'package:fruits_market/features/Auth/presentation/manger/cubit/auth_cubit
 import 'package:get/get_navigation/get_navigation.dart';
 
 import 'features/splash/presentation/splash_view.dart';
+import 'helper/binding.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,10 +19,15 @@ class FruitsMarket extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialBinding: Binding(),
       theme: ThemeData(fontFamily: 'Poppins'),
       debugShowCheckedModeBanner: false,
-      home: BlocProvider(
-        create: (context) => AuthCubit(),
+      home: MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (context) => AuthCubit(),),
+
+        ],
+
         child: SplashView(),
       ),
     );

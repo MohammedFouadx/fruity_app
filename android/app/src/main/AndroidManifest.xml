@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fruit.fruits_market">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
    <application
         android:label="Fruity"
         android:icon="@mipmap/ic_launcher">

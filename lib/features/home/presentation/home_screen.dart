@@ -1,15 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fruits_market/features/home/home_controller.dart';
 import 'package:fruits_market/features/home/presentation/widgets/daily_fresh.dart';
 import 'package:fruits_market/features/home/presentation/widgets/fresh_fruits.dart';
 import 'package:fruits_market/features/home/presentation/widgets/search_box.dart';
-
+import 'package:get/get.dart';
 import '../../../core/constants.dart';
 
 
 class HomeScreen extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
